@@ -24,5 +24,9 @@
             android:name=".DashboardActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".JobListActivity"
+            android:exported="false" />
+
     </application>
 </manifest>
