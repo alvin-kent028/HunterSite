@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="#FFF9E1">
 
-    <!-- Top Banner -->
     <View
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -18,7 +17,6 @@
         android:layout_height="60dp"
         android:paddingHorizontal="20dp"
         android:gravity="center_vertical">
-
 
         <ImageView
             android:id="@+id/btnBackToJobs"
@@ -50,8 +48,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,6 +76,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Full Name">
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFullName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"/>
@@ -91,6 +88,7 @@
                         android:layout_marginTop="12dp"
                         android:hint="Portfolio URL (Optional)">
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPortfolio"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textUri"/>
@@ -102,6 +100,7 @@
                         android:layout_marginTop="12dp"
                         android:hint="Why should we hire you?">
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCoverLetter"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:gravity="top"
@@ -109,18 +108,22 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <LinearLayout
+                        android:id="@+id/btnUploadResume"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_marginTop="20dp"
                         android:gravity="center_vertical"
                         android:background="#F0F0F0"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:padding="10dp">
                         <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@android:drawable/ic_menu_save" />
                         <TextView
+                            android:id="@+id/tvResumeFileName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"

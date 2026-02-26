@@ -5,15 +5,18 @@
     android:layout_height="match_parent"
     android:background="#FFF9E1">
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottomNavigation"
         android:scrollbars="none">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <!-- Top Banner -->
             <View
@@ -21,6 +24,7 @@
                 android:layout_height="200dp"
                 android:background="#FFF9E1"
                 app:layout_constraintTop_toTopOf="parent"/>
+
 
             <!-- Profile Card -->
             <androidx.cardview.widget.CardView
@@ -34,11 +38,13 @@
                 app:cardBackgroundColor="#F7E08B"
                 app:layout_constraintTop_toTopOf="parent">
 
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="24dp">
+
 
                     <!-- EDIT PROFILE BUTTON (Top Right) -->
                     <TextView
@@ -51,6 +57,7 @@
                         android:layout_gravity="end"
                         android:background="@android:color/transparent"/>
 
+
                     <TextView
                         android:id="@+id/tvProfileName"
                         android:layout_width="wrap_content"
@@ -59,6 +66,7 @@
                         android:textSize="22sp"
                         android:textStyle="bold"
                         android:textColor="#333333"/>
+
 
                     <!-- Job Title -->
                     <TextView
@@ -69,6 +77,7 @@
                         android:textColor="#FFB300"
                         android:layout_marginTop="4dp"/>
 
+
                     <!-- Location -->
                     <TextView
                         android:layout_width="wrap_content"
@@ -78,12 +87,14 @@
                         android:textColor="#666666"
                         android:layout_marginTop="6dp"/>
 
+
                     <!-- Divider -->
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="#EEEEEE"
                         android:layout_marginVertical="18dp"/>
+
 
                     <!-- Contact Info -->
                     <TextView
@@ -93,6 +104,7 @@
                         android:textSize="14sp"
                         android:textColor="#333333"/>
 
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -100,6 +112,7 @@
                         android:textSize="14sp"
                         android:textColor="#333333"
                         android:layout_marginTop="6dp"/>
+
 
                     <!-- Skills -->
                     <TextView
@@ -111,6 +124,7 @@
                         android:textColor="#333333"
                         android:layout_marginTop="18dp"/>
 
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -118,6 +132,7 @@
                         android:textSize="14sp"
                         android:textColor="#666666"
                         android:layout_marginTop="4dp"/>
+
 
                     <!-- Experience -->
                     <TextView
@@ -129,6 +144,7 @@
                         android:textColor="#333333"
                         android:layout_marginTop="18dp"/>
 
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -136,6 +152,7 @@
                         android:textSize="14sp"
                         android:textColor="#666666"
                         android:layout_marginTop="4dp"/>
+
 
                     <!-- Education -->
                     <TextView
@@ -147,6 +164,7 @@
                         android:textColor="#333333"
                         android:layout_marginTop="18dp"/>
 
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -154,6 +172,7 @@
                         android:textSize="14sp"
                         android:textColor="#666666"
                         android:layout_marginTop="4dp"/>
+
 
                     <!-- Buttons -->
                     <Button
@@ -167,6 +186,7 @@
                         android:layout_marginTop="24dp"
                         app:cornerRadius="25dp"/>
 
+
                     <Button
                         android:id="@+id/btnLogout"
                         android:layout_width="match_parent"
@@ -178,8 +198,10 @@
                         android:layout_marginTop="10dp"
                         app:cornerRadius="25dp"/>
 
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- Profile Picture -->
             <androidx.cardview.widget.CardView
@@ -192,6 +214,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
+
                 <ImageView
                     android:id="@+id/ivProfilePicture"
                     android:layout_width="match_parent"
@@ -202,8 +225,10 @@
                     android:src="@android:drawable/ic_menu_myplaces" />
             </androidx.cardview.widget.CardView>
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 
     <!-- Bottom Navigation -->
     <LinearLayout
@@ -216,7 +241,9 @@
         android:weightSum="3"
         android:elevation="8dp">
 
+
         <TextView
+            android:id="@+id/navHome"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -225,7 +252,9 @@
             android:textStyle="bold"
             android:textColor="#333333"/>
 
+
         <TextView
+            android:id="@+id/navFindJob"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -234,7 +263,9 @@
             android:textStyle="bold"
             android:textColor="#333333"/>
 
+
         <TextView
+            android:id="@+id/navProfile"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -243,6 +274,8 @@
             android:textStyle="bold"
             android:textColor="#FFB300"/>
 
+
     </LinearLayout>
+
 
 </RelativeLayout>

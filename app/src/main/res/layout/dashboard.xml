@@ -75,6 +75,7 @@
                     android:paddingEnd="8dp">
 
                     <EditText
+                        android:id="@+id/etSearchQuery"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -84,6 +85,7 @@
                         android:textColorHint="#999999"/>
 
                     <Button
+                        android:id="@+id/btnSearch"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:text="Search"
@@ -194,23 +196,27 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:background="#F7E08B">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Senior Full Stack Developer" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/jobTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Senior Full Stack Developer"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LeapFroggr Inc." android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manila, Philippines • Remote" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
-                <Button android:id="@+id/btnApply1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
+                <Button
+                    android:id="@+id/btnApply1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Apply Now"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="#FFB300"
+                    android:textColor="#000000"
+                    android:textAllCaps="false"
+                    app:cornerRadius="8dp"/>
             </LinearLayout>
-
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
-
-
-            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -222,8 +228,6 @@
                 android:textSize="11sp" />
 
         </LinearLayout>
-
-
     </ScrollView>
 
     <LinearLayout
