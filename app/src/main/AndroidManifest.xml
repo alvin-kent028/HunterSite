@@ -33,6 +33,11 @@
         <activity android:name=".ProfileActivity" android:exported="false" />
 
 
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".SwitchAccountActivity" />
+        <activity android:name=".SignUpActivity" />
+
+
 
     </application>
 </manifest>
