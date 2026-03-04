@@ -104,6 +104,26 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="#F7E08B">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Data Analyst" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Insights Global Ph" android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BGC, Taguig • Remote" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
+                    <Button android:id="@+id/btnApply4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
@@ -116,7 +136,47 @@
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Android Developer" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LeapFroggr Inc." android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manila, Philippines • Remote" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
-                    <Button android:id="@+id/btnApply4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
+                    <Button android:id="@+id/btnApply5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="#F7E08B">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Social Media Manager" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Buzz Digital Agency" android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pasig City • Hybrid" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
+                    <Button android:id="@+id/btnApply6" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="#F7E08B">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IT Support Specialist" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Empire Logistics" android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pasay City • On-site" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
+                    <Button android:id="@+id/btnApply7" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

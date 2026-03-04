@@ -47,9 +47,16 @@ class MainActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Welcome $role!", Toast.LENGTH_SHORT).show()
 
-                // Switch to your Dashboard activity
-                val intent = Intent(this, DashboardActivity::class.java)
-                startActivity(intent)
+                // Logic to switch between dashboards based on role
+                if (role == "Employer") {
+                    // Open the Employer dashboard where they can add jobs
+                    val intent = Intent(this, EmployerDashboardActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    // Open the regular Job Seeker dashboard
+                    val intent = Intent(this, DashboardActivity::class.java)
+                    startActivity(intent)
+                }
             }
         }
 
