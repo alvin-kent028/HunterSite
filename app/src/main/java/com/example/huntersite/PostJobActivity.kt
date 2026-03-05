@@ -1,7 +1,9 @@
 package com.example.huntersite
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,29 +12,45 @@ class PostJobActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Make sure this matches the name of your XML file for the post job page
         setContentView(R.layout.activity_post_job)
 
-        // Bind the buttons from your XML
+        // 1. Bind the views from your XML
         val btnBackArrow = findViewById<ImageButton>(R.id.btnBackArrow)
         val btnPublish = findViewById<Button>(R.id.btnPublish)
         val btnCancel = findViewById<Button>(R.id.btnCancel)
 
-        // 1. Back Arrow Logic
+        // Input fields for validation
+        val editJobTitle = findViewById<EditText>(R.id.editJobTitle)
+        val editCompanyName = findViewById<EditText>(R.id.editCompanyName)
+
+        // 2. Back Arrow Logic - Returns to Employer Dashboard
         btnBackArrow.setOnClickListener {
-            finish() // Closes this page and goes back to Dashboard
+            finish()
         }
 
-        // 2. Publish Button Logic
+        // 3. Publish Button Logic - Moves to the Posted Jobs List
         btnPublish.setOnClickListener {
-            // Later, you can add code here to save the job to a database
-            Toast.makeText(this, "Job Published Successfully!", Toast.LENGTH_LONG).show()
-            finish() // Return to dashboard after posting
+            val title = editJobTitle.text.toString().trim()
+            val company = editCompanyName.text.toString().trim()
+
+            if (title.isEmpty() || company.isEmpty()) {
+                // Prevent publishing if fields are empty
+                Toast.makeText(this, "Please fill in the Job Title and Company", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Job Published Successfully!", Toast.LENGTH_LONG).show()
+
+                // Navigate to the list of posted jobs (The "Pop Up" flow)
+                val intent = Intent(this, PostedJobsActivity::class.java)
+                startActivity(intent)
+
+                // Close this activity so the user doesn't come back to the form
+                finish()
+            }
         }
 
-        // 3. Cancel Button Logic
+        // 4. Cancel Button Logic - Returns to Dashboard without saving
         btnCancel.setOnClickListener {
-            finish() // Just goes back without saving
+            finish()
         }
     }
 }

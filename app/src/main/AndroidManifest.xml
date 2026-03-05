@@ -43,7 +43,5 @@
         <activity android:name=".PostedJobsActivity" android:exported="false" />
         <activity android:name=".EmployerProfileActivity" android:exported="false" />
 
-
-
     </application>
 </manifest>

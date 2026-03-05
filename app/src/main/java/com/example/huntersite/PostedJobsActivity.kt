@@ -2,7 +2,6 @@ package com.example.huntersite
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -10,24 +9,31 @@ class PostedJobsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Ensure this matches your XML filename (e.g., activity_posted_jobs.xml)
+        // Ensure this matches your XML filename
         setContentView(R.layout.activity_posted_jobs)
 
         // Bind Navigation IDs from your XML
         val navHome = findViewById<TextView>(R.id.navHome)
+        val navPostedJobs = findViewById<TextView>(R.id.navFindJob)
         val navProfile = findViewById<TextView>(R.id.navProfile)
 
-        // 1. Return to Employer Home
+        // 1. Return to Employer Home (Dashboard)
         navHome.setOnClickListener {
             val intent = Intent(this, EmployerDashboardActivity::class.java)
-            // Use Flags to prevent opening multiple copies of the same page
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            // This flag ensures we don't keep piling up pages in the background
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
+            finish()
         }
 
-        // 2. Open Employer Profile
+        // 2. Already on this page
+        navPostedJobs.setOnClickListener {
+            // Do nothing or scroll to top
+        }
+
+        // 3. Open Employer Profile
         navProfile.setOnClickListener {
-            // Ensure you have an EmployerProfileActivity created
+            // Make sure you have created EmployerProfileActivity
             val intent = Intent(this, EmployerProfileActivity::class.java)
             startActivity(intent)
         }
