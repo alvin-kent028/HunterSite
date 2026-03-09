@@ -42,7 +42,8 @@ class EmployerDashboardActivity : AppCompatActivity() {
 
         // Open Recruiter Profile Page
         navProfile.setOnClickListener {
-            val intent = Intent(this, RecruiterProfileActivity::class.java)
+
+            val intent = Intent(this, EmployerProfileActivity::class.java)
             startActivity(intent)
         }
     }
