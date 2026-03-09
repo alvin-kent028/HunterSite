@@ -1,3 +1,5 @@
+package com.example.huntersite.Room
+
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 

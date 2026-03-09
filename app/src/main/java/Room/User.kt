@@ -1,3 +1,5 @@
+package com.example.huntersite.Room
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
