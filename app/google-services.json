@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "947844752858",
+    "project_id": "huntersite-bfbab",
+    "storage_bucket": "huntersite-bfbab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947844752858:android:35ce4162de3d304ed18ce3",
+        "android_client_info": {
+          "package_name": "com.example.huntersite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx18gDxkun1hQHzkUDVYTf_WNLbfzH9O8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
