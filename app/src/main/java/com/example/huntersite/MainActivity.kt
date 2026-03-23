@@ -26,38 +26,37 @@ class MainActivity : AppCompatActivity() {
             val email = editEmail.text.toString().trim()
             val password = editPassword.text.toString().trim()
 
-            // Reset errors every time button is clicked
+            // Reset errors
             emailLayout.error = null
             passwordLayout.error = null
 
-            // 1. Check if Email is valid
             if (email.isEmpty()) {
                 emailLayout.error = "Email is required"
-            } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                emailLayout.error = "Invalid email format (e.g., name@email.com)"
+                return@setOnClickListener
             }
-            // 2. Check if Password is long enough
-            else if (password.length < 6) {
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                emailLayout.error = "Invalid email format"
+                return@setOnClickListener
+            }
+            if (password.length < 6) {
                 passwordLayout.error = "Password must be at least 6 characters"
+                return@setOnClickListener
             }
-            // 3. Success!
-            else {
-                val selectedId = radioGroup.checkedRadioButtonId
-                val role = findViewById<RadioButton>(selectedId).text
 
-                Toast.makeText(this, "Welcome $role!", Toast.LENGTH_SHORT).show()
+            val selectedId = radioGroup.checkedRadioButtonId
+            val radioButton = findViewById<RadioButton>(selectedId)
+            val role = radioButton.text.toString()
 
-                // Logic to switch between dashboards based on role
-                if (role == "Employer") {
-                    // Open the Employer dashboard where they can add jobs
-                    val intent = Intent(this, EmployerDashboardActivity::class.java)
-                    startActivity(intent)
-                } else {
-                    // Open the regular Job Seeker dashboard
-                    val intent = Intent(this, DashboardActivity::class.java)
-                    startActivity(intent)
-                }
+            Toast.makeText(this, "Welcome $role!", Toast.LENGTH_SHORT).show()
+
+            if (role == "Employer") {
+                val intent = Intent(this, EmployerDashboardActivity::class.java)
+                startActivity(intent)
+            } else {
+                val intent = Intent(this, DashboardActivity::class.java)
+                startActivity(intent)
             }
+            finish()
         }
 
         txtRegister.setOnClickListener {

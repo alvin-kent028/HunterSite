@@ -4,9 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.huntersite.R // FIX 2: Manually import R if it stays red
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -14,10 +12,22 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.profile)
 
-        // Using explicit types to fix the "Cannot infer type" error
         val btnEditProfile = findViewById<TextView>(R.id.btnEditProfile)
         val btnSwitchAccount = findViewById<Button>(R.id.btnSwitchAccount)
         val btnLogout = findViewById<Button>(R.id.btnLogout)
+
+        // Navigation
+        findViewById<TextView>(R.id.navHome).setOnClickListener {
+            val intent = Intent(this, DashboardActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        findViewById<TextView>(R.id.navFindJob).setOnClickListener {
+            val intent = Intent(this, JobListActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         btnEditProfile.setOnClickListener {
             val intent = Intent(this, EditProfileActivity::class.java)
@@ -30,12 +40,9 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         btnLogout.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
-            // Fix for the 'flags' error
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            // Redirect to LogoutActivity for confirmation
+            val intent = Intent(this, LogoutActivity::class.java)
             startActivity(intent)
-            finish()
-            Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
         }
     }
 }

@@ -1,9 +1,8 @@
-package com.example.huntersite // Double check this matches your top line!
+package com.example.huntersite
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -14,7 +13,7 @@ class SwitchAccountActivity : AppCompatActivity() {
         setContentView(R.layout.activity_switch_account)
 
         val btnConfirmSwitch: Button = findViewById(R.id.btnConfirmSwitch)
-        val btnCancelSwitch: TextView = findViewById(R.id.btnCancelSwitch)
+        val btnCancelSwitch: Button = findViewById(R.id.btnCancelSwitch)
 
         btnConfirmSwitch.setOnClickListener {
             performSwitchAccount()
