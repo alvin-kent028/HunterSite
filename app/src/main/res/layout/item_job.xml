@@ -1,228 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFF9E1">
-
-    <!-- Top Banner -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#FFF9E1"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <RelativeLayout
-        android:id="@+id/jobHeader"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:paddingHorizontal="20dp"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Available Jobs"
-            android:textColor="#333333"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/jobHeader"
-        android:layout_above="@id/bottomNavigation"
-        android:scrollbars="vertical"
-        android:fadeScrollbars="false"
-        android:scrollbarThumbVertical="@android:color/darker_gray">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp"
-            android:paddingBottom="20dp"> <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:background="#F7E08B">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Senior Full Stack Developer" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LeapFroggr Inc." android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manila, Philippines • Remote" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
-                <Button android:id="@+id/btnApply1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#F7E08B">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Solutions Engineer" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AboitizPower" android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Makati, Philippines • Hybrid" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
-                    <Button android:id="@+id/btnApply2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#F7E08B">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Apple iOS Developer" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LeapFroggr Inc." android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manila, Philippines • Remote" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
-                    <Button android:id="@+id/btnApply3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="4dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#F7E08B">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Data Analyst" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Insights Global Ph" android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BGC, Taguig • Remote" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
-                    <Button android:id="@+id/btnApply4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#F7E08B">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Android Developer" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LeapFroggr Inc." android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manila, Philippines • Remote" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
-                    <Button android:id="@+id/btnApply5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="4dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#F7E08B">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Social Media Manager" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Buzz Digital Agency" android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pasig City • Hybrid" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
-                    <Button android:id="@+id/btnApply6" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="4dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#F7E08B">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IT Support Specialist" android:textColor="#000000" android:textSize="18sp" android:textStyle="bold" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Empire Logistics" android:textColor="#FFB300" android:textSize="14sp" android:layout_marginTop="4dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pasay City • On-site" android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="4dp"/>
-                    <Button android:id="@+id/btnApply7" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Apply Now" android:layout_marginTop="12dp" android:backgroundTint="#FFB300" android:textColor="#000000" android:textAllCaps="false" app:cornerRadius="8dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </ScrollView>
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    app:cardCornerRadius="15dp">
 
     <LinearLayout
-        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
         android:background="#F7E08B"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:elevation="10dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
-            android:id="@+id/navHome"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Home"
-            android:textColor="#333333"
+            android:id="@+id/tvJobTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Job Title"
+            android:textColor="#000000"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/navFindJob"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Find Job"
-            android:textColor="#FFB300"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/navProfile"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Profile"
-            android:textColor="#333333"
-            android:textStyle="bold" />
+            android:id="@+id/tvJobStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Active • 0 Applicants"
+            android:textColor="#666666" />
     </LinearLayout>
-
-
-</RelativeLayout>
+</androidx.cardview.widget.CardView>

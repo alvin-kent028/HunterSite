@@ -2,47 +2,68 @@ package com.example.huntersite
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.asLiveData
+import com.example.huntersite.Room.AppDatabase
 
 class EmployerDashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_employer_dashboard) // Ensure this matches your XML file name
+        setContentView(R.layout.activity_employer_dashboard)
 
-        // 1. Bind the "Post a New Job" Button
         val btnPostJob = findViewById<Button>(R.id.btnPostJob)
+        val tvActiveJobsCount = findViewById<TextView>(R.id.tvActiveJobsCount)
+        val tvTotalApplicantsCount = findViewById<TextView>(R.id.tvTotalApplicantsCount)
+        val cvActiveListing = findViewById<View>(R.id.cvActiveListing)
+        val tvRecentJobTitle = findViewById<TextView>(R.id.tvRecentJobTitle)
+        val tvRecentJobInfo = findViewById<TextView>(R.id.tvRecentJobInfo)
 
-        // 2. Bind the Bottom Navigation items
         val navHome = findViewById<TextView>(R.id.navHome)
-        val navPostedJobs = findViewById<TextView>(R.id.navFindJob) // This is the ID from your XML
+        val navPostedJobs = findViewById<TextView>(R.id.navFindJob)
         val navProfile = findViewById<TextView>(R.id.navProfile)
 
-        // --- CLICK LISTENERS ---
+        val database = AppDatabase.getDatabase(this)
 
-        // Open the Post Job Form
+        // Observe Jobs
+        database.jobDao().getAllJobs().observe(this) { jobs ->
+            val activeJobs = jobs.filter { it.status == "Active" }
+            tvActiveJobsCount.text = activeJobs.size.toString()
+            
+            if (activeJobs.isNotEmpty()) {
+                cvActiveListing.visibility = View.VISIBLE
+                val latestJob = activeJobs.first()
+                tvRecentJobTitle.text = latestJob.title
+                // Placeholder for applicants count as we don't have an applicants table yet
+                tvRecentJobInfo.text = "0 Applicants • Posted just now"
+            } else {
+                cvActiveListing.visibility = View.GONE
+            }
+        }
+
+        // Observe Applicants (Users)
+        database.userDao().readAllData().asLiveData().observe(this) { users ->
+            tvTotalApplicantsCount.text = users.size.toString()
+        }
+
         btnPostJob.setOnClickListener {
             val intent = Intent(this, PostJobActivity::class.java)
             startActivity(intent)
         }
 
-        // Home Navigation (Currently stays on this page)
         navHome.setOnClickListener {
-            Toast.makeText(this, "You are already home!", Toast.LENGTH_SHORT).show()
+            // Already home
         }
 
-        // Open Posted Jobs Page
         navPostedJobs.setOnClickListener {
             val intent = Intent(this, PostedJobsActivity::class.java)
             startActivity(intent)
         }
 
-        // Open Recruiter Profile Page
         navProfile.setOnClickListener {
-
             val intent = Intent(this, EmployerProfileActivity::class.java)
             startActivity(intent)
         }

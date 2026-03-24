@@ -57,23 +57,25 @@
                         android:id="@+id/tvProfileName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Alvin Kent Bigbig"
+                        android:text="Name"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         android:textColor="#333333"/>
 
                     <TextView
+                        android:id="@+id/tvProfileTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Aspiring Web Developer"
+                        android:text="Title"
                         android:textSize="16sp"
                         android:textColor="#FFB300"
                         android:layout_marginTop="4dp"/>
 
                     <TextView
+                        android:id="@+id/tvProfileLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pasay City, Metro Manila"
+                        android:text="Location"
                         android:textSize="14sp"
                         android:textColor="#666666"
                         android:layout_marginTop="6dp"/>
@@ -85,9 +87,10 @@
                         android:layout_marginVertical="18dp"/>
 
                     <TextView
+                        android:id="@+id/tvProfileEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Email: rubygracejasper@hotmail.com"
+                        android:text="Email: "
                         android:textSize="14sp"
                         android:textColor="#333333"/>
 
@@ -97,7 +100,8 @@
                         android:text="Phone: 0912-345-6789"
                         android:textSize="14sp"
                         android:textColor="#333333"
-                        android:layout_marginTop="6dp"/>
+                        android:layout_marginTop="6dp"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -109,9 +113,10 @@
                         android:layout_marginTop="18dp"/>
 
                     <TextView
+                        android:id="@+id/tvProfileSkills"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="• HTML • CSS • Java • PHP • MySQL"
+                        android:text="No skills listed"
                         android:textSize="14sp"
                         android:textColor="#666666"
                         android:layout_marginTop="4dp"/>
@@ -126,9 +131,10 @@
                         android:layout_marginTop="18dp"/>
 
                     <TextView
+                        android:id="@+id/tvProfileExperience"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="On-the-Job Trainee - IT Support (2024)"
+                        android:text="No experience listed"
                         android:textSize="14sp"
                         android:textColor="#666666"
                         android:layout_marginTop="4dp"/>
@@ -140,7 +146,8 @@
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:textColor="#333333"
-                        android:layout_marginTop="18dp"/>
+                        android:layout_marginTop="18dp"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -148,7 +155,8 @@
                         android:text="BS Information Technology"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@+id/btnSwitchAccount"

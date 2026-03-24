@@ -59,23 +59,25 @@
                         android:id="@+id/tvProfileName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Shy Mirasol"
+                        android:text="Name"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         android:textColor="#333333"/>
 
                     <TextView
+                        android:id="@+id/tvProfileTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Senior Talent Acquisition"
+                        android:text="Title"
                         android:textSize="16sp"
                         android:textColor="#FFB300"
                         android:layout_marginTop="4dp"/>
 
                     <TextView
+                        android:id="@+id/tvProfileCompany"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="LeapFroggr Inc. • Makati City"
+                        android:text="Company"
                         android:textSize="14sp"
                         android:textColor="#666666"
                         android:layout_marginTop="6dp"/>
@@ -84,7 +86,7 @@
                         android:id="@+id/tvProfileEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Business Email: shymirasol@gmail.com"
+                        android:text="Business Email: "
                         android:textSize="14sp"
                         android:textColor="#333333"/>
 
@@ -105,9 +107,10 @@
                         android:layout_marginTop="18dp"/>
 
                     <TextView
+                        android:id="@+id/tvProfileHiringFocus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="• Tech &amp; Software • UI/UX Design • Project Management"
+                        android:text="No focus listed"
                         android:textSize="14sp"
                         android:textColor="#666666"
                         android:layout_marginTop="4dp"/>
@@ -119,7 +122,8 @@
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:textColor="#333333"
-                        android:layout_marginTop="18dp"/>
+                        android:layout_marginTop="18dp"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -127,7 +131,8 @@
                         android:text="LeapFroggr Inc. (50-200 Employees)\nIT Services and Consulting"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -136,7 +141,8 @@
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:textColor="#333333"
-                        android:layout_marginTop="18dp"/>
+                        android:layout_marginTop="18dp"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -144,7 +150,8 @@
                         android:text="12 Jobs Posted • 85 Applicants Managed"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp"
+                        android:visibility="gone"/>
 
 
                     <Button

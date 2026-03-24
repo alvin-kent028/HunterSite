@@ -52,16 +52,27 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/txtLoginHint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Create an account or sign in."
                     android:textSize="12sp"
                     android:layout_marginTop="4dp"/>
 
+                <!-- Note for users without data -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="* New users must register first."
+                    android:textColor="#D32F2F"
+                    android:textSize="11sp"
+                    android:textStyle="italic"
+                    android:layout_marginTop="8dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="16dp"
                     android:text="I am a:"
                     android:textStyle="bold" />
 

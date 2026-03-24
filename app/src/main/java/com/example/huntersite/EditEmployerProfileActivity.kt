@@ -5,13 +5,20 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class EditEmployerProfileActivity : AppCompatActivity() {
 
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Make sure this matches your XML file name (e.g., activity_edit_employer_profile.xml)
         setContentView(R.layout.activity_edit_profile_employer)
+
+        auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
 
         // 1. Bind all the EditText fields
         val etName = findViewById<EditText>(R.id.etEditRecruiterName)
@@ -24,25 +31,57 @@ class EditEmployerProfileActivity : AppCompatActivity() {
         val btnSave = findViewById<Button>(R.id.btnSaveRecruiterChanges)
         val btnCancel = findViewById<Button>(R.id.btnCancelRecruiterEdit)
 
-        // --- CLICK LISTENERS ---
+        // Load current data
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            firestore.collection("users").document(currentUser.uid).get()
+                .addOnSuccessListener { document ->
+                    if (document != null && document.exists()) {
+                        etName.setText(document.getString("name"))
+                        etEmail.setText(document.getString("email"))
+                        etTitle.setText(document.getString("title") ?: "")
+                        etCompany.setText(document.getString("company") ?: "")
+                        etHiringFocus.setText(document.getString("hiringFocus") ?: "")
+                    }
+                }
+        }
 
         // Save Button Logic
         btnSave.setOnClickListener {
-            val name = etName.text.toString()
-            val company = etCompany.text.toString()
+            val name = etName.text.toString().trim()
+            val email = etEmail.text.toString().trim()
+            val title = etTitle.text.toString().trim()
+            val company = etCompany.text.toString().trim()
+            val hiringFocus = etHiringFocus.text.toString().trim()
 
-            if (name.isNotEmpty() && company.isNotEmpty()) {
-                // Here is where you would normally save to a database or SharedPreferences
-                Toast.makeText(this, "Profile Updated for $name at $company", Toast.LENGTH_SHORT).show()
-                finish() // Go back to the profile view
-            } else {
-                Toast.makeText(this, "Please fill in Name and Company", Toast.LENGTH_SHORT).show()
+            if (name.isEmpty() || email.isEmpty()) {
+                Toast.makeText(this, "Name and Email are required", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val userMap = hashMapOf(
+                "name" to name,
+                "email" to email,
+                "title" to title,
+                "company" to company,
+                "hiringFocus" to hiringFocus
+            )
+
+            if (currentUser != null) {
+                firestore.collection("users").document(currentUser.uid)
+                    .update(userMap as Map<String, Any>)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Employer profile updated successfully", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(this, "Update failed: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
             }
         }
 
         // Discard/Cancel Button Logic
         btnCancel.setOnClickListener {
-            // Just close the activity without saving anything
             finish()
         }
     }
