@@ -37,7 +37,6 @@
 
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".SwitchAccountActivity" />
-        <activity android:name=".SignUpActivity" />
 
 
         <activity android:name=".EmployerDashboardActivity" android:exported="false" />

@@ -7,8 +7,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.auth.FirebaseAuthException
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +19,6 @@ class MainActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        // Bind the views
         val emailLayout = findViewById<TextInputLayout>(R.id.emailLayout)
         val passwordLayout = findViewById<TextInputLayout>(R.id.passwordLayout)
         val editEmail = findViewById<EditText>(R.id.editEmail)
@@ -33,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             val email = editEmail.text.toString().trim()
             val password = editPassword.text.toString().trim()
 
-            // Reset errors
             emailLayout.error = null
             passwordLayout.error = null
 
@@ -54,39 +51,44 @@ class MainActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
+                        // Logic 1: Success - Move to Dashboard
                         val selectedId = radioGroup.checkedRadioButtonId
                         val radioButton = findViewById<RadioButton>(selectedId)
                         val role = radioButton.text.toString()
 
                         Toast.makeText(this, "Welcome back, $role!", Toast.LENGTH_SHORT).show()
 
-                        if (role == "Employer") {
-                            val intent = Intent(this, EmployerDashboardActivity::class.java)
-                            startActivity(intent)
+                        val intent = if (role == "Employer") {
+                            Intent(this, EmployerDashboardActivity::class.java)
                         } else {
-                            val intent = Intent(this, DashboardActivity::class.java)
-                            startActivity(intent)
+                            Intent(this, DashboardActivity::class.java)
                         }
+                        startActivity(intent)
                         finish()
                     } else {
+                        // Handle Failures
                         val exception = task.exception
-                        when (exception) {
-                            is FirebaseAuthInvalidUserException -> {
-                                // Specific case: Account not found
-                                Toast.makeText(this, "No account found with this email. Please register first.", Toast.LENGTH_LONG).show()
-                                emailLayout.error = "Account not found"
-                                // Also matching the "Login Failed Incorrect Email" request via a helper or specific message if preferred
-                                // But the Toast is what the user explicitly asked for
-                            }
-                            is FirebaseAuthInvalidCredentialsException -> {
-                                // This usually covers both wrong password and sometimes malformed email
-                                // But specifically for "Incorrect Password"
-                                Toast.makeText(this, "Login Failed Incorrect Password", Toast.LENGTH_LONG).show()
-                                passwordLayout.error = "Incorrect Password"
-                            }
-                            else -> {
-                                // General failure
-                                Toast.makeText(this, "Login Failed: ${exception?.message}", Toast.LENGTH_SHORT).show()
+                        if (exception is FirebaseAuthException) {
+                            when (exception.errorCode) {
+                                "ERROR_INVALID_EMAIL", "ERROR_USER_NOT_FOUND" -> {
+                                    // Logic 2: Account does not exist
+                                    emailLayout.error = "No Account found"
+                                    Toast.makeText(this, "No Account found", Toast.LENGTH_SHORT).show()
+                                }
+                                "ERROR_WRONG_PASSWORD" -> {
+                                    // Logic 3: Wrong password
+                                    passwordLayout.error = "The Password is Incorrect"
+                                    Toast.makeText(this, "The Password is Incorrect", Toast.LENGTH_SHORT).show()
+                                }
+                                "ERROR_USER_DISABLED" -> {
+                                    emailLayout.error = "This account has been disabled"
+                                }
+                                else -> {
+                                    // Modern Firebase grouped error (if protection is enabled)
+                                    // If you get "INVALID_LOGIN_CREDENTIALS", it's a security catch-all
+                                    passwordLayout.error = "Invalid email or password"
+                                    Toast.makeText(this, "Login failed: ${exception.message}", Toast.LENGTH_SHORT).show()
+                                }
                             }
                         }
                     }

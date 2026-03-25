@@ -28,6 +28,7 @@ class RegisterActivity : AppCompatActivity() {
         val editEmail = findViewById<EditText>(R.id.editRegEmail)
         val editPass = findViewById<EditText>(R.id.editRegPassword)
         val editConfirmPass = findViewById<EditText>(R.id.editConfirmPassword)
+        val rgRole = findViewById<RadioGroup>(R.id.rgRegisterRole)
 
         val nameLayout = findViewById<TextInputLayout>(R.id.nameLayout)
         val emailLayout = findViewById<TextInputLayout>(R.id.regEmailLayout)
@@ -39,6 +40,11 @@ class RegisterActivity : AppCompatActivity() {
             val email = editEmail.text.toString().trim()
             val pass = editPass.text.toString()
             val confirmPass = editConfirmPass.text.toString()
+
+            // Get selected role
+            val selectedRoleId = rgRole.checkedRadioButtonId
+            val rbRole = findViewById<RadioButton>(selectedRoleId)
+            val role = rbRole.text.toString()
 
             // Reset errors
             nameLayout.error = null
@@ -71,7 +77,8 @@ class RegisterActivity : AppCompatActivity() {
                     val userMap = hashMapOf(
                         "uid" to uid,
                         "name" to name,
-                        "email" to email
+                        "email" to email,
+                        "role" to role
                     )
 
                     firestore.collection("users")

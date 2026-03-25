@@ -105,13 +105,16 @@
                 android:layout_marginBottom="32dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAppliedJobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginEnd="8dp"
                     app:cardBackgroundColor="#F7E08B"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="0dp">
+                    app:cardElevation="0dp"
+                    android:clickable="true"
+                    android:focusable="true">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -119,29 +122,33 @@
                         android:padding="16dp"
                         android:gravity="center">
                         <TextView
+                            android:id="@+id/tvAppliedCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="75k+"
+                            android:text="0"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             android:textColor="#333333"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="remote jobs"
+                            android:text="Applied Jobs"
                             android:textSize="12sp"
                             android:textColor="#666666"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cvActiveJobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="8dp"
                     app:cardBackgroundColor="#F7E08B"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="0dp">
+                    app:cardElevation="0dp"
+                    android:clickable="true"
+                    android:focusable="true">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -149,16 +156,17 @@
                         android:padding="16dp"
                         android:gravity="center">
                         <TextView
+                            android:id="@+id/tvActiveJobsCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="2k+"
+                            android:text="0"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             android:textColor="#333333"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="new daily"
+                            android:text="Active Jobs"
                             android:textSize="12sp"
                             android:textColor="#666666"/>
                     </LinearLayout>
