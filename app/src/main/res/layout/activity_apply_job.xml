@@ -5,12 +5,6 @@
     android:layout_height="match_parent"
     android:background="#FFF9E1">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#FFF9E1"
-        app:layout_constraintTop_toTopOf="parent"/>
-
     <RelativeLayout
         android:id="@+id/applyHeader"
         android:layout_width="match_parent"
@@ -65,7 +59,7 @@
                         android:id="@+id/tvApplyingFor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Applying for: Senior Full Stack Developer"
+                        android:text="Applying for: Job Position"
                         android:textColor="#100800"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -80,6 +74,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Resume Link (Google Drive/Dropbox)">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etResumeLink"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textUri"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -102,34 +108,10 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etCoverLetter"
                             android:layout_width="match_parent"
-                            android:layout_height="150dp"
+                            android:layout_height="120dp"
                             android:gravity="top"
                             android:inputType="textMultiLine"/>
                     </com.google.android.material.textfield.TextInputLayout>
-
-                    <LinearLayout
-                        android:id="@+id/btnUploadResume"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="20dp"
-                        android:gravity="center_vertical"
-                        android:background="#F0F0F0"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:padding="10dp">
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@android:drawable/ic_menu_save" />
-                        <TextView
-                            android:id="@+id/tvResumeFileName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="Upload Resume (PDF)"
-                            android:textColor="#666666"/>
-                    </LinearLayout>
 
                     <Button
                         android:id="@+id/btnSubmitApplication"
